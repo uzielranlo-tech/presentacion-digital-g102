@@ -1,0 +1,267 @@
+/* Mobile-First: Patrón de diseño donde primero se trabaja sobre la vista móvil */
+
+/* CSS tarjeta (business-card) */
+
+.tarjeta {
+  /* Estilo general de la tarjeta  */
+  display: grid;
+  overflow: hidden;
+  line-height: 1.6;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  font-size: 1rem;
+  width: 90%;
+  max-width: 700px;
+
+  /* Propiedades para posicionar, centrar y animar */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* CSS para esconder */
+
+.tarjeta.oculto {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.95);
+  pointer-events: none;
+}
+
+/* CSS interno de tarjeta (business-card) */
+
+.tarjeta .contenido {
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 0.25fr 1fr;
+  color: var(--verdeazul);
+  text-shadow: 0px 0.5px var(--verdeazul-claro);
+}
+
+.tarjeta .superior {
+  display: grid;
+  grid-column: 0.33333333;
+  grid-row: 1;
+  align-content: start;
+  grid-gap: 1.5vmin;
+  animation: entrarIzquierda 1s;
+}
+
+.nombre {
+  font-size: 4em;
+  font-weight: var(--fuente-delgada);
+  line-height: 1;
+  color: white;
+}
+
+.profesion {
+  text-transform: uppercase;
+  font-size: 1.75em;
+  font-weight: var(--fuente-gruesa);
+}
+
+.tarjeta .inferior {
+  display: grid;
+  grid-row: 3;
+}
+
+.tarjeta .izquierda {
+  font-weight: var(--fuente-delgada);
+  font-size: 1.7em;
+  animation: entrarIzquierda 1s;
+}
+
+.tarjeta .izquierda i {
+  color: white;
+  margin-right: 10px;
+}
+
+.tarjeta .izquierda .redes {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.tarjeta .izquierda .redes i {
+  font-size: 2.25em;
+  color: white;
+}
+
+.tarjeta .izquierda .redes i:hover {
+  text-shadow: 0 0 10px var(--verdeazul-claro), 0 0 20px var(--verdeazul-claro),
+    0 0 30px var(--verdeazul-claro);
+  transform: var(--efecto-resalto);
+}
+
+.tarjeta .derecha {
+  font-weight: var(--fuente-delgada);
+  grid-column: 3;
+  align-self: end;
+  animation: entrarDerecha 1s;
+}
+
+/* CSS que pseudo clases & elementos */
+/* Permiten meter estilos cuando un elemento esta Ó entra en un estado */
+/* Por ejemplo: */
+/* :hover - Aplica estilos cuando el cursor del ratón se posiciona sobre un elemento. */
+/* :active - Aplica estilos mientras el usuario presiona un botón o un enlace. */
+/* ::before - Inserta y estiliza contenido antes del contenido de un elemento */
+/* ::after - Inserta y estiliza contenido antes del contenido de un elemento */
+
+.tarjeta .derecha span::before {
+  content: "🇲🇽 ";
+  font-size: 1.2em;
+}
+
+.tarjeta .derecha span:hover {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.75);
+}
+
+.ubicacion {
+  white-space: nowrap;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  color: var(--color-texto);
+}
+
+.tarjeta .fondo {
+  z-index: 1;
+  background-color: var(--color-fondoTarjeta);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.tarjeta .franja {
+  position: absolute;
+  top: -100%;
+  left: -5%;
+  width: 80%;
+  height: 250%;
+  background: var(--gradiente-tarjeta);
+  transform: rotate(38deg);
+  animation: girarEntrando 1s;
+}
+
+.tarjeta .inferior button {
+  background-color: var(--verdeazul);
+  border: 2px solid var(--verdeazul);
+  color: var(--verde-obscuro);
+
+  padding: 12px 24px;
+  margin: 20px 0 0;
+  font-size: 1.1em;
+  font-weight: var(--fuente-delgada);
+  cursor: pointer;
+}
+
+/* --- Efecto al pasar el cursor (Hover) --- */
+.tarjeta .inferior button:hover {
+  background-color: var(--verdeazul);
+  color: var(--color-texto);
+  transform: var(--efecto-resalto);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Animaciones CSS para efectos visuales en la página */
+/* En este ejemplo todas realizan un movimiento horizontal (translateX) */
+
+/* Hace el movimiento horizontal con giro para la franja */
+@keyframes girarEntrando {
+  0% {
+    transform: translateX(-100vmin) rotate(15deg);
+  }
+  100% {
+    transform: translateX(0) rotate(38deg);
+  }
+}
+@keyframes entrarIzquierda {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes entrarDerecha {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* CSS Media-Queries (Reglas CSS) */
+/* Reglas para permitir aplicar estilos de CSS de forma condicional */
+
+/* --- Media Query para celulares en modo horizontal (Landscape) --- */
+@media (orientation: landscape) and (max-height: 500px) {
+  .tarjeta {
+    /* La tarjeta ocupará casi toda la altura y tendrá scroll si es necesario */
+    max-height: 95vh;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  /* Modificar tamaños de fuente en datos */
+
+  .nombre {
+    font-size: 2em;
+  }
+
+  .profesion {
+    font-size: 1em;
+  }
+
+  .tarjeta .izquierda {
+    font-size: 1em;
+  }
+
+  .tarjeta .izquierda .redes i {
+    font-size: 1.5em;
+  }
+
+  .ubicacion {
+    font-size: 1em;
+  }
+
+  /* Ajustes de botón "Explorar CV" */
+  .tarjeta .inferior button {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    margin-top: 15px;
+  }
+
+  /* 4. Reducimos el espaciado entre elementos */
+  .tarjeta .superior {
+    grid-gap: 0.5rem;
+  }
+
+  .tarjeta .izquierda .redes {
+    margin-bottom: 15px;
+    gap: 15px;
+  }
+}
+
+/* --- Media Query para tablets/laptops --- */
+/* --- Media Query para ajustar la tarjeta en tabletas y laptops --- */
+
+@media screen and (min-width: 769px) {
+  .tarjeta .contenido {
+    /*
+      Cambiamos las filas para que se ajusten al contenido.
+      - La primera fila (nombre) ocupa lo que necesita (auto).
+      - La segunda fila (el espacio del medio) se expande para rellenar (1fr).
+      - La tercera fila (contacto/botón) ocupa solo lo que necesita (auto).
+    */
+    grid-template-rows: auto 1fr auto;
+  }
+}

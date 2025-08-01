@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- HEAD -->
+    <!-- 
+      Etiqueta donde podemos configurar metadatos HTML <meta>,
+      los metadatos <meta> no son visibles para el usuario.  
+    -->
+
+    <!-- 
+      Adicional se definen propiedades generales como <title>, 
+      se enlazan archivos CSS y/o JS del proyecto.
+      Ó se enlazan/importan librerías/frameworks CSS o JS
+    -->
+
+    <meta charset="UTF-8" />
+    <title>Eduardo Muñoz</title>
+
+    <!-- Importación recurso para fuente/tipografía de la paǵina con Google Fonts (Embed Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Importación de librería CSS de iconos (FontAwesome) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- CSS del proyecto -->
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/tarjeta.css" />
+    <link rel="stylesheet" href="css/contenido-principal.css" />
+  </head>
+  <body>
+    <!-- BODY -->
+
+    <!-- MAIN - Contenido principal -->
+
+    <main id="contenido-principal" class="contenido-principal">
+      <section class="informacion-general">
+        <div class="bloque-info">
+          <h1 class="seleccionado">Presentación</h1>
+        </div>
+        <div class="contenido-bloque abierto">
+          <div class="info">
+            <p>...</p>
+          </div>
+        </div>
+
+        <div class="bloque-info">
+          <h1>Habilidades</h1>
+        </div>
+        <div class="contenido-bloque">
+          <div class="info">
+            <p>...</p>
+          </div>
+        </div>
+
+        <div class="bloque-info">
+          <h1>Experiencia Laboral</h1>
+        </div>
+        <div class="contenido-bloque">
+          <div class="info">
+            <p>...</p>
+          </div>
+        </div>
+        <button id="btn-contacto" aria-label="Contacto">
+          <i class="fa-solid fa-phone fa-shake"></i>
+        </button>
+      </section>
+    </main>
+
+    <!-- ARTICLE - Artículo/Bloque de tarjeta de presentación -->
+
+    <article id="vista-tarjeta" class="tarjeta">
+      <div class="contenido">
+        <!-- DATOS: NOMBRE Y PROFESIÓN -->
+        <div class="superior">
+          <div class="nombre">Eduardo Muñoz</div>
+          <div class="profesion">Ingeniero de Software</div>
+        </div>
+        <div class="inferior">
+          <div class="izquierda">
+            <!-- CONTACTO: REDES -->
+            <div class="redes">
+              <a href="https://www.linkedin.com/in/eml9407" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://wa.me/+524612275316" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+            </div>
+            <!-- CONTACTO: CORREO, TELÉFONO -->
+            <div class="correo"><i class="fa fa-envelope"></i> edu@eml.run</div>
+            <div class="telefono">
+              <i class="fa fa-mobile"></i> +52 461 227-5316
+            </div>
+
+            <!-- BOTÓN: VER CV -->
+            <button id="btn-cv">Explorar CV</button>
+          </div>
+          <div class="derecha">
+            <div class="ubicacion">
+              <span>Guanajuato, MX</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fondo">
+        <div class="franja"></div>
+      </div>
+    </article>
+
+    <script src="js/tarjeta.js"></script>
+    <script src="js/contenido-principal.js"></script>
+  </body>
+</html>

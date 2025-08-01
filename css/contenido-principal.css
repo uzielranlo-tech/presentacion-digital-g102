@@ -1,0 +1,90 @@
+/* CSS contenido-principal */
+
+.contenido-principal {
+  padding: 20px;
+  transition: filter 0.5 ease;
+}
+
+.contenido-principal.desenfocado {
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.informacion-general {
+  width: 90%;
+  margin: 30px auto 0 auto;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bloque-info {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 25px;
+  cursor: pointer;
+  background: var(--gradiente-tarjeta);
+  color: white;
+}
+
+.bloque-info h1 {
+  font-weight: var(--fuente-delgada);
+  font-size: 2.5em;
+}
+
+.contenido-bloque {
+  height: 0px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--verde-obscuro);
+  color: white;
+  font-size: 2em;
+  transition: height 0.3s ease-in-out;
+}
+
+.contenido-bloque .info {
+  padding: 30px;
+}
+
+.bloque-info h1.seleccionado {
+  color: var(--verdeazul-claro);
+  font-weight: var(--fuente-gruesa);
+}
+
+#btn-contacto {
+  /* --- Posicionamiento Fijo --- */
+  position: fixed; /* Fijar elemento en la pantalla */
+  bottom: 25px; /* Distancia desde abajo */
+  right: 25px; /* Distancia desde la derecha */
+  z-index: 1000;
+
+  /* --- Forma y Tamaño --- */
+  width: 120px;
+  height: 120px;
+  font-size: 50px;
+
+  /* --- Estilos Visuales --- */
+  border-radius: 50%;
+  background-color: var(--verdeazul-claro);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  /* --- Alineación del ícono y cursor --- */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  /* --- Transición suave para efectos --- */
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+/* Efecto al pasar el cursor por encima */
+#btn-contacto:hover {
+  transform: scale(1.1); /* Agranda ligeramente el botón */
+  background-color: var(--verde-obscuro); /* Cambia el color (opcional) */
+}
