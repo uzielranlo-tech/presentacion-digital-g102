@@ -3,13 +3,13 @@
 /* Incluye variables root y CSS de elementos */
 :root {
   --color-texto: #292929;
-  --color-gradienteTarjeta-inicio: #00468C;
-  --color-gradienteTarjeta-fin: #87CEFA;
+  --color-gradienteTarjeta-inicio: #3a58ef;
+  --color-gradienteTarjeta-fin: #4f2dcb;
   --color-fondoTarjeta: white;
 
-  --verdeazul: rgb(93, 180, 300);
-  --verdeazul-claro: rgb(93, 173, 226);
-  --verde-obscuro: rgb(46, 134, 193);
+  --verdeazul: rgb(0, 136, 255);
+  --verdeazul-claro: rgb(7, 0, 216);
+  --verde-obscuro: rgb(4, 40, 61);
 
   --fuente-oficial: "IBM Plex Sans", sans-serif;
   --fuente-delgada: 300;
@@ -18,8 +18,8 @@
 
   --gradiente-tarjeta: linear-gradient(
     to right,
-    rgb(0, 70, 140),
-    rgb(135, 206, 250)
+    rgb(24, 2, 83),
+    rgb(5, 48, 116)
   );
 
   --efecto-resalto: translateY(-2px);
