@@ -18,8 +18,8 @@
 
   --gradiente-tarjeta: linear-gradient(
     to right,
-    rgb(0, 48, 12),
-    rgb(0, 131, 33)
+    rgb(0, 70, 140),
+    rgb(135, 206, 250)
   );
 
   --efecto-resalto: translateY(-2px);
