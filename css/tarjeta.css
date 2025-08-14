@@ -113,7 +113,7 @@
 /* ::after - Inserta y estiliza contenido antes del contenido de un elemento */
 
 .tarjeta .derecha span::before {
-  content: "🇲🇽 ";
+  content: "Puebla, Pue ";
   font-size: 1.2em;
 }
 
