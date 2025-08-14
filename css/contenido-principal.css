@@ -39,7 +39,7 @@
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  background: var(--azul-oscuro);
+  background: var(--verde-obscuro);
   color: white;
   font-size: 2em;
   transition: height 0.3s ease-in-out;
